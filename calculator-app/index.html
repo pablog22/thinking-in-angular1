@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="calculatorApp">
+<head>
+    <meta charset="utf-8">
+
+    <title>Calculator App</title>
+
+    <script src="../angular.js"></script>
+    <script src="app.js"></script>
+
+</head>
+
+<body ng-controller="CalculatorCtrl as c">
+    <h1>Calculator App</h1>
+    <p>
+        <input type="number" ng-model="c.operand1"></input>
+        <span>{{c.operation}}</span>
+        <input type="number" ng-model="c.operand2"></input>
+        <button ng-click="c.executeButton()">=</button>
+        <span>{{c.result}}</span>
+    </p>
+    <p>
+        Choose operation:
+        <button ng-click="c.plusButton()">+</button>
+        <button ng-click="c.minusButton()">-</button>
+        <button ng-click="c.timesButton()">*</button>
+        <button ng-click="c.divideButton()">/</button>
+    </p>
+</body>
+
+</html>
