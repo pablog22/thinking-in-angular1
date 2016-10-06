@@ -27,23 +27,8 @@ function CalculatorCtrl(){
     }
 
 
-    this.plusButton = function(){
-        console.log("Plus!");
-        this.operation = "+";
-    }
-
-    this.minusButton = function(){
-        console.log("Minus!");
-        this.operation = "-";
-    }
-
-    this.timesButton = function(){
-        console.log("Times!");
-        this.operation = "*";
-    }
-
-    this.divideButton = function(){
-        console.log("Divide!");
-        this.operation = "/";
+    this.operationButton = function(operation){
+        console.log("Operand selected: " + operation);
+        this.operation = operation;
     }
 }
