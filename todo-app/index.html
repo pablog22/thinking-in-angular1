@@ -27,14 +27,14 @@
         <button ng-show="c.editEnabled" ng-click="c.setEditEnabled(false)">Done</button>
     </p>
     <p>
-        <div ng-repeat="task in c.list">
-            &emsp;
-            <span>{{$index + 1}}.</span>
-            <span ng-hide="c.editEnabled" ng-bind="task"></span>
-            <input ng-show="c.editEnabled" type="text" ng-model="task"></input>
-            <button ng-hide="c.editEnabled" ng-click="c.deleteTask($index)">Delete</button>
-            <br>
-        </div>
+        <ol>
+            <li ng-repeat="task in c.list track by $index">
+                <span ng-hide="c.editEnabled" ng-bind="task"></span>
+                <input ng-show="c.editEnabled" type="text" ng-model="task"></input>
+                <button ng-hide="c.editEnabled" ng-click="c.deleteTask($index)">Delete</button>
+                <br>
+            </li>
+        </ol>
     </p>
 </body>
 
