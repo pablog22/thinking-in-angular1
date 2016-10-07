@@ -1,2 +1,11 @@
 Modules:
 http://ngmodules.org/
+
+Next Steps
+
+- Services, $http and promises
+- Creating directives and components
+- Unit testing (Jasmine)
+- Others
+	Build tools- Yeoman, Bower, Gulp
+	Routing - UI router, ngRouter
