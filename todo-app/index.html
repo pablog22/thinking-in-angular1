@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="todoApp">
+<head>
+    <meta charset="utf-8">
+
+    <title>Calculator App</title>
+
+    <script src="../angular.js"></script>
+    <script src="app.js"></script>
+
+</head>
+
+<body ng-controller="TodoAppController as c">
+    <h1>Todo App</h1>
+    <p>
+        Add a Todo:
+    </p>
+    <p>
+        <input type="text" ng-model="c.newElement"></input><br>
+        <button ng-click="c.addButton()">Add</button>
+    </p>
+    <p>
+        Your Todos:
+    </p>
+    <p>
+        <button ng-hide="c.editEnabled" ng-click="c.setEditEnabled(true)">Edit</button>
+        <button ng-show="c.editEnabled" ng-click="c.setEditEnabled(false)">Done</button>
+    </p>
+    <p>
+        <div ng-repeat="task in c.list">
+            &emsp;
+            <span>{{$index + 1}}.</span>
+            <span ng-hide="c.editEnabled" ng-bind="task"></span>
+            <input ng-show="c.editEnabled" type="text" ng-model="task"></input>
+            <button ng-hide="c.editEnabled" ng-click="c.deleteTask($index)">Delete</button>
+            <br>
+        </div>
+    </p>
+</body>
+
+</html>
